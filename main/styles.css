@@ -423,6 +423,7 @@ footer img{
 .mission-statement p{
     color:rgb(43, 42, 42);
     font-size: 1.1rem;
+    text-indent: 4rem;
 }
 
 .mission-statement a{
@@ -432,6 +433,14 @@ footer img{
     bottom: 0;
     right: 0;
     color: var(--black);
+}
+
+.mission-statement .margin-bottom-1{
+    margin-bottom: 1rem;
+}
+
+.mission-statement .margin-bottom-2{
+    margin-bottom: 2rem;
 }
 
 .services{
