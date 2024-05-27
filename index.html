@@ -28,6 +28,7 @@
     <div class="nav-menu">
         <span><a class="nav-link" href="#services-tag">Services</a></span>
         <span><a class="nav-link" href="#about-tag">About</a></span>
+        <span><a class="nav-link" href="#recent-tag">Recent Work</a></span>
         <span><a class="nav-link" href="#contact-tag">Contact</a></span>
     </div>
 
@@ -36,8 +37,8 @@
         <ul>
             <li class="border-underline"><a href="#services-tag">Services</a></li>
             <li class="border-underline"><a href="#about-tag">About</a></li>
+            <li class="border-underline"><a href="#recent-tag">Recent Work</a></li>
             <li class="border-underline"><a href="#contact-tag">Contact</a></li>
-            <li class="border-underline"><a href="#contact-tag">Recent Work</a></li>
         </ul>
     </nav>
 
@@ -117,6 +118,26 @@
                 <img src="images/about-rocks-350.webp" width="300px" height="200px" loading="lazy" alt="">
             </div>
         </section>
+        <div id="recent-tag" class="nav-tag"></div>
+        <section class="recent-work border-accent-top">
+            <div class="container centered" style="background-color: lightgreen;">
+                <h4>Recent Work</h4>
+                <div class="rw-bf" style="background-color: lightblue;">
+                    <div class="rw-headers">
+                        <p>Before</p>
+                        <p>After</p>
+                    </div>
+                    <div class="rw-slider">
+                        <img id="rw-left" class="rw-chevron" src="images/chevron-left.svg" loading="lazy" alt="">
+                        <div class="rw-images">
+                            <img id="before-img" src="" loading="lazy" alt="">
+                            <img id="after-img" src="" loading="lazy" alt="">
+                        </div>
+                        <img id="rw-right" class="rw-chevron" src="images/chevron-right.svg" loading="lazy" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
         <div id="contact-tag" class="nav-tag"></div>
         <section class="contact border-accent">
             <div class="container">
@@ -132,6 +153,7 @@
                 </div>
             </div>
         </section>
+        
     </main>
     <footer>
         <div class="footer-set-one">
@@ -143,6 +165,35 @@
         </div>
     </footer>
     <script>
+
+        const rwRight = document.getElementById("rw-right")
+        const rwLeft = document.getElementById('rw-left')
+        const beforeImg = document.getElementById('before-img')
+        const afterImg = document.getElementById('after-img')
+        const rwBefore = ["images/goose1.jpg","images/frog1.jpg","images/kat1.jpg"]
+        const rwAfter = ["images/goose2.jpg","images/frog2.jpg","images/kat2.jpg"]
+        var rwIndex = 0;
+        beforeImg.src = rwBefore[rwIndex]
+        afterImg.src = rwAfter[rwIndex]
+
+        rwRight.addEventListener("click", () => {
+            if(rwBefore.length == rwIndex + 1){
+                rwIndex = 0
+            } else {
+                rwIndex+=1
+            }
+            beforeImg.src = rwBefore[rwIndex]
+            afterImg.src = rwAfter[rwIndex]
+        })
+        rwLeft.addEventListener("click", () => {
+            if(rwIndex == 0){
+                rwIndex = rwBefore.length - 1
+            } else {
+                rwIndex-=1
+            }
+            beforeImg.src = rwBefore[rwIndex]
+            afterImg.src = rwAfter[rwIndex]
+        })
 
         const bg = document.querySelector('.deep-background')
         const bgFilter = document.querySelector('.bg-filter')

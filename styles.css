@@ -580,6 +580,60 @@ footer img{
     top: 1.4rem;
 }
 
+/*
+    Recent Work Classes
+*/
+
+.recent-work{
+    margin: 0 auto;
+}
+
+.rw-bf{
+    width: min(90%, 40vw);
+}
+
+.rw-headers{
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+    background-color: red;
+    margin: 0 auto;
+}
+
+.rw-slider{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rw-images{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rw-images img{
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 25vh;
+}
+
+.rw-chevron{
+    background-color: var(--secondary);
+    border: var(--black) solid .15rem;
+    border-radius: 50%;
+}
+
+.rw-chevron:hover{
+    cursor: pointer;
+}
+
+/*
+    Footer Classes
+*/
+
 .footer-set-two{
     display: none;
 }
@@ -587,6 +641,10 @@ footer img{
 /*
     General Classes
 */
+
+.centered{
+    margin: 0 auto;
+}
 
 .hidden{
     display: none;
@@ -597,9 +655,15 @@ footer img{
     border-bottom: var(--secondary) solid 2vh;
 }
 
+.border-accent-top{
+    border-top: var(--secondary) solid 2vh;
+}
+
+/*
 .border-accent-bottom{
     border-bottom: var(--primary) solid 0.5vh;
 }
+*/
 
 .border-white-top{
     border-top: var(--white) solid 1px ;
