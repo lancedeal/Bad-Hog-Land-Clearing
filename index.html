@@ -120,12 +120,12 @@
         </section>
         <div id="recent-tag" class="nav-tag"></div>
         <section class="recent-work border-accent-top">
-            <div class="container centered" style="background-color: lightgreen;">
+            <div class="container centered">
                 <h4>Recent Work</h4>
-                <div class="rw-bf" style="background-color: lightblue;">
+                <div class="rw-bf">
                     <div class="rw-headers">
-                        <p>Before</p>
-                        <p>After</p>
+                        <p><i>Before</i></p>
+                        <p><i>After</i></p>
                     </div>
                     <div class="rw-slider">
                         <img id="rw-left" class="rw-chevron" src="images/chevron-left.svg" loading="lazy" alt="">
@@ -136,6 +136,12 @@
                         <img id="rw-right" class="rw-chevron" src="images/chevron-right.svg" loading="lazy" alt="">
                     </div>
                 </div>
+                <ul class="reviews">
+                    <li><i>"They were very cool."</i></li>
+                    <li><i>"My trees are gone."</i></li>
+                    <li><i>"I would hire them again."</i></li>
+                    <li><i>"Where am I?"</i></li>
+                </ul>
             </div>
         </section>
         <div id="contact-tag" class="nav-tag"></div>
@@ -170,8 +176,8 @@
         const rwLeft = document.getElementById('rw-left')
         const beforeImg = document.getElementById('before-img')
         const afterImg = document.getElementById('after-img')
-        const rwBefore = ["images/goose1.jpg","images/frog1.jpg","images/kat1.jpg"]
-        const rwAfter = ["images/goose2.jpg","images/frog2.jpg","images/kat2.jpg"]
+        const rwBefore = ["images/before1.jpg","images/before2.jpg"]
+        const rwAfter = ["images/after1.jpg","images/after2.jpg"]
         var rwIndex = 0;
         beforeImg.src = rwBefore[rwIndex]
         afterImg.src = rwAfter[rwIndex]
