@@ -49,6 +49,7 @@
     --white:#f3f3f3;
     --less-dark: #393939;
     --mission-statement:#e6e6e6     ;
+    --light-gray: #9b9b9b;
 
     --nav-height:10vh;
     --nav-height-mini:2.5rem;
@@ -623,12 +624,13 @@ footer img{
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 .rw-images{
     display: flex;
     justify-content: space-around;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     border-top: #cecece solid 2px;
     border-bottom: #cecece solid 2px;
     margin-bottom: 1rem;
@@ -648,6 +650,26 @@ footer img{
 
 .rw-chevron:hover{
     cursor: pointer;
+}
+
+.index {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: calc(1rem + 2px + .75rem - 3.5px);
+    margin: 0 auto;
+}
+
+.index span{
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    margin: 0 .3rem;
+}
+
+.index .selected{
+    background-color: var(--black);
 }
 
 .reviews{

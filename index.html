@@ -134,13 +134,14 @@
                             <img id="after-img" src="" loading="lazy" alt="">
                         </div>
                         <img id="rw-right" class="rw-chevron" src="images/chevron-right.svg" loading="lazy" alt="">
+                        <div class="index">
+                            <span id="index-one" class="selected"></span>
+                            <span id="index-two"></span>
+                        </div>
                     </div>
                 </div>
                 <ul class="reviews">
-                    <li><i>"They were very cool."</i></li>
-                    <li><i>"My trees are gone."</i></li>
-                    <li><i>"I would hire them again."</i></li>
-                    <li><i>"Where am I?"</i></li>
+                    <li><i>"I have worked with this team several times. I am impressed with how they are growing their company with professional dedication. They are applying their years of experience to constantly exceeding my expectations with their quick response, availability, and how they always clean up the work site behind them. I highly recommend using bad hog land clearing."</i></li>
                 </ul>
             </div>
         </section>
@@ -178,6 +179,11 @@
         const afterImg = document.getElementById('after-img')
         const rwBefore = ["images/before1.jpg","images/before2.jpg"]
         const rwAfter = ["images/after1.jpg","images/after2.jpg"]
+
+        const sliderOne = document.getElementById("index-one")
+        const sliderTwo = document.getElementById("index-two")
+        const sliderInd = [sliderOne, sliderTwo]
+        var prevIndex 
         var rwIndex = 0;
         beforeImg.src = rwBefore[rwIndex]
         afterImg.src = rwAfter[rwIndex]
@@ -185,20 +191,26 @@
         rwRight.addEventListener("click", () => {
             if(rwBefore.length == rwIndex + 1){
                 rwIndex = 0
+                sliderInd[rwBefore.length - 1].classList.remove('selected')
             } else {
                 rwIndex+=1
+                sliderInd[rwIndex - 1].classList.remove('selected')
             }
             beforeImg.src = rwBefore[rwIndex]
             afterImg.src = rwAfter[rwIndex]
+            sliderInd[rwIndex].classList.toggle("selected")
         })
         rwLeft.addEventListener("click", () => {
             if(rwIndex == 0){
                 rwIndex = rwBefore.length - 1
+                sliderInd[0].classList.remove("selected")
             } else {
                 rwIndex-=1
+                sliderInd[rwIndex + 1].classList.remove('selected')
             }
             beforeImg.src = rwBefore[rwIndex]
             afterImg.src = rwAfter[rwIndex]
+            sliderInd[rwIndex].classList.toggle("selected")
         })
 
         const bg = document.querySelector('.deep-background')
