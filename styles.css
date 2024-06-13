@@ -67,6 +67,10 @@ html{
     scroll-behavior:smooth;
 }
 
+body{
+    background-color: var(--black);
+}
+
 nav{
     width: 100%;
     height: var(--nav-height-mini);
@@ -673,18 +677,41 @@ footer img{
 }
 
 .reviews{
-    font-family: var(--ff-accent2);
-    width: 60%;
-    margin: 0 0 1rem 0;
-    font-size: 1.3rem;
+    width: 65%;
+    margin: 1rem 0 ;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    color: var(--less-dark);
+}
+
+.reviews h5{
+    font-family: var(--ff-primary);
+    font-size: 1.4rem;
+    text-decoration: underline;
+}
+
+.reviews ul{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--ff-accent2);
+    font-size: 1.2rem;
 }
 
 .reviews li{
-    margin: .5rem 0;
+    margin: 1rem 0;
+    color: var(--less-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews .signature{
+    margin-left: 1.5rem;
+    margin-top: .25rem;
+    display: block;
+}
+
+.reviews button{
+    border: var(--black) solid 2px;
+    padding: .1rem .2rem;
 }
 
 /*

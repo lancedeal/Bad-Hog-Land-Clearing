@@ -137,12 +137,24 @@
                         <div class="index">
                             <span id="index-one" class="selected"></span>
                             <span id="index-two"></span>
+                            <span id="index-three"></span>
+                            <span id="index-four"></span>
+                            <span id="index-five"></span>
+                            <span id="index-six"></span>
                         </div>
                     </div>
                 </div>
-                <ul class="reviews">
-                    <li><i>"I have worked with this team several times. I am impressed with how they are growing their company with professional dedication. They are applying their years of experience to constantly exceeding my expectations with their quick response, availability, and how they always clean up the work site behind them. I highly recommend using bad hog land clearing."</i></li>
-                </ul>
+                <div class="reviews">
+                    <h5>What People Are Saying</h5>
+                    <ul>
+                        <li><i><span><span id="rev1">"I have worked with this team several times. I am impressed with how they are growing their company with professional dedication.</span><button id="review-m-1">more</button>"</span><span class="signature"> - Maribeth</span></i></li>
+                        <li><i><span><span id="rev2">"Bad Hog Land Clearing is awesome! Robert and Noah are honest, hardworking, communicative, punctual, and professional. They were very careful with weather conditions for burning and the safety of our trees/land.</span><button id="review-m-2">MORE</button>"</span><span class="signature"> - Emily<span></span></i></li>
+                        <li><i><span><span id="rev3">"Absolutely fantastic job! These guys are great. They took time to hear what we wanted and worked diligently to get it done."</span><button id="review-m-3">MORE</button></span><span class="signature"> - Catherine</span></i></li>
+                        <li><i><span><span id="rev4">"Robert and Noah did an excellent job for us by trimming the tops of our oaks in the backyard. Now we can get a great view of the lake!"</span><button id="review-m-4">MORE</button></span><span class="signature"> - Callahan</span></i></li>
+                        <li><i><span><span id="rev5">"It was a pleasure to have Noah and Robert on our property near Drfitwood."</span><button id="review-m-5">MORE</button></span><span class="signature"> - Doug</span></i></li>
+                    </ul>
+                </div>
+                
             </div>
         </section>
         <div id="contact-tag" class="nav-tag"></div>
@@ -177,12 +189,16 @@
         const rwLeft = document.getElementById('rw-left')
         const beforeImg = document.getElementById('before-img')
         const afterImg = document.getElementById('after-img')
-        const rwBefore = ["images/before1.jpg","images/before2.jpg"]
-        const rwAfter = ["images/after1.jpg","images/after2.jpg"]
+        const rwBefore = ["images/before1.jpg","images/before2.jpg","images/before3.jpg","images/before4.jpg","images/before5.jpg","images/before6.jpg"]
+        const rwAfter = ["images/after1.jpg","images/after2.jpg","images/after3.jpg","images/after4.jpg","images/after5.jpg","images/after6.jpg"]
 
         const sliderOne = document.getElementById("index-one")
         const sliderTwo = document.getElementById("index-two")
-        const sliderInd = [sliderOne, sliderTwo]
+        const sliderThree = document.getElementById("index-three")
+        const sliderFour = document.getElementById("index-four")
+        const sliderFive = document.getElementById("index-five")
+        const sliderSix = document.getElementById("index-six")
+        const sliderInd = [sliderOne, sliderTwo, sliderThree, sliderFour, sliderFive, sliderSix]
         var prevIndex 
         var rwIndex = 0;
         beforeImg.src = rwBefore[rwIndex]
@@ -212,6 +228,66 @@
             afterImg.src = rwAfter[rwIndex]
             sliderInd[rwIndex].classList.toggle("selected")
         })
+
+        // The Review Button - More & Less Section
+
+        
+        const revBtn1 = document.getElementById("review-m-1")
+        const revBtn2 = document.getElementById("review-m-2")
+        const revBtn3 = document.getElementById("review-m-3")
+        const revBtn4 = document.getElementById("review-m-4")
+        const revBtn5 = document.getElementById("review-m-5")
+        const rev1 = document.getElementById("rev1")
+        const rev2 = document.getElementById("rev2")
+        const rev3 = document.getElementById("rev3")
+        const rev4 = document.getElementById("rev4")
+        const rev5 = document.getElementById("rev5")
+        var rev1Status = false
+        var rev2Status = false
+        var rev3Status = false
+        var rev4Status = false
+        var rev5Status = false
+        function toggleReview(id, review, status, button, textMore, textLess){
+            if(status === false){
+                if(id === 1){
+                    rev1Status = true
+                } else if(id === 2){
+                    rev2Status = true
+                } else if(id === 3){
+                    rev3Status = true
+                } else if(id === 4){
+                    rev4Status = true
+                } else if(id === 5){
+                    rev5Status = true
+                }
+                review.textContent = textMore
+                button.textContent = "Less"
+
+            } 
+            else{
+                status = false
+                if(id === 1){
+                    rev1Status = false
+                } else if(id === 2){
+                    rev2Status = false
+                } else if(id === 3){
+                    rev3Status = false
+                } else if(id === 4){
+                    rev4Status = false
+                } else if(id === 5){
+                    rev5Status = false
+                }
+                review.textContent = textLess
+                button.textContent = "More"
+            }
+        }
+
+        revBtn1.addEventListener('click', () => {toggleReview(1, rev1, rev1Status, revBtn1,'"I have worked with this team several times. I am impressed with how they are growing their company with professional dedication. They are applying their years of experience to constantly exceeding my expectations with their quick response, availability, and how they always clean up the work site behind them. I highly recommend using bad hog land clearing."','"I have worked with this team several times. I am impressed with how they are growing their company with professional dedication."')})
+        revBtn2.addEventListener('click', () => {toggleReview(2, rev2, rev2Status, revBtn2, '"Bad Hog Land Clearing is awesome! Robert and Noah are honest, hardworking, communicative, punctual, and professional. They were very careful with weather conditions for burning and the safety of our trees/land. We\'ve already hired them twice and are super pleased with the results. They even finished in less time than the original quote! We will absolutely continue to use them for our property maintenance needs. There\'s nothing "bad" about Bad Hog and we highly recommend!"', '"Bad Hog Land Clearing is awesome! Robert and Noah are honest, hardworking, communicative, punctual, and professional. They were very careful with weather conditions for burning and the safety of our trees/land."')})
+        revBtn3.addEventListener('click', () => {toggleReview(3, rev3, rev3Status, revBtn3, '"Absolutely fantastic job! These guys are great. They took time to hear what we wanted and worked diligently to get it done. Our trees had taken quite the battering from the freeze and drought, and we still needed to clear all our branch piles and cedar growth. Bad Hog identified the dead trees and removed them, cleared the cedar growth and mulched all the remaining limbs. I am able to walk my dog out in the yard again and he loves it too! Many thanks!"', '"Absolutely fantastic job! These guys are great. They took time to hear what we wanted and worked diligently to get it done."')})
+        revBtn4.addEventListener('click', () => {toggleReview(4, rev4, rev4Status, revBtn4, '"Robert and Noah did an excellent job for us by trimming the tops of our oaks in the backyard. Now we can get a great view of the lake! They did exactly what they said they would do and they were on time and worked until the job was done. Cleaned up the yard nicely and hauled all the limbs and brush away. The price was very reasonable. Great customer service. Thank you Bad Hog Land Clearing!"', '"Robert and Noah did an excellent job for us by trimming the tops of our oaks in the backyard. Now we can get a great view of the lake!"')})
+        revBtn5.addEventListener('click', () => {toggleReview(5, rev5, rev5Status, revBtn5, '"It was a pleasure to have Noah and Robert on our property near Drfitwood. They cleared 1-2 acres, raised up all the trees so that we could make use of our land, chipped, burned, and hauled anything we needed. They completed the work in the amount of time they quoted, had a price we felt was fair, and listened to our requests. Would absolutely recommend them and would hire again. Well done y’all."', '"It was a pleasure to have Noah and Robert on our property near Drfitwood."')})
+
 
         const bg = document.querySelector('.deep-background')
         const bgFilter = document.querySelector('.bg-filter')
