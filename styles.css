@@ -53,7 +53,7 @@
 
     --nav-height:10vh;
     --nav-height-mini:2.5rem;
-    --nav-menu-height:8rem;
+    --nav-menu-height:10rem;
 
     --border-size:4px;
 
@@ -240,7 +240,7 @@ footer img{
     position: fixed;
     z-index: 4;
     transition: .2s ease-in-out;
-    transform: translate3d(0px, -8rem, 0px);
+    transform: translate3d(0px, -10rem, 0px);
 }
 
 .nav-menu span{
@@ -432,6 +432,18 @@ footer img{
     text-indent: 4rem;
 }
 
+@media (max-width: 50rem){
+    .mission-statement p{
+        text-indent: 2rem;
+    }
+}
+
+@media (max-width: 30rem){
+    .mission-statement p{
+        text-indent: 1rem;
+    }
+}
+
 .mission-statement a{
     position: relative;
     top: 0;
@@ -612,7 +624,7 @@ footer img{
 .rw-bf{
     /*width: min(90%, 100vw);*/
     width: 90%;
-    margin:0 auto;
+    margin:1rem auto;
 }
 
 .rw-headers{
@@ -640,12 +652,25 @@ footer img{
     margin-bottom: 1rem;
 }
 
+
 .rw-images img{
     background-color: #272727;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 45%;
+    width: min(90%, 45%);
+}
+
+@media (max-width: 62rem){
+    .rw-images{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rw-images img{
+        width: 90%;
+        margin: .5rem 0;
+    }
 }
 
 .rw-chevron{
@@ -677,7 +702,7 @@ footer img{
 }
 
 .reviews{
-    width: 65%;
+    width: min(90%, 62rem);
     margin: 1rem 0 ;
     display: flex;
     flex-direction: column;
@@ -694,6 +719,7 @@ footer img{
     flex-direction: column;
     font-family: var(--ff-accent2);
     font-size: 1.2rem;
+    align-items: flex-start;
 }
 
 .reviews li{
@@ -703,6 +729,13 @@ footer img{
     flex-direction: column;
 }
 
+.reviews .underline {
+    border-bottom: var(--primary) solid 4px;
+    width: min(100%, 25rem);
+    margin: .3rem 0;
+    display: block;
+}
+
 .reviews .signature{
     margin-left: 1.5rem;
     margin-top: .25rem;
@@ -710,8 +743,21 @@ footer img{
 }
 
 .reviews button{
-    border: var(--black) solid 2px;
-    padding: .1rem .2rem;
+    padding: .25rem .25rem;
+    margin: 0 .5rem;
+    border: none;
+}
+
+.google-reviews {
+    width: 9rem ;
+    align-self: flex-end;
+    padding: 0 1rem;
+    background-color: white;
+    border-radius: .5rem;
+}
+
+.google-reviews:hover {
+    cursor: pointer;
 }
 
 /*
@@ -725,10 +771,6 @@ footer img{
 /*
     General Classes
 */
-
-.centered{
-    margin: 0 auto;
-}
 
 .hidden{
     display: none;
@@ -793,6 +835,9 @@ footer img{
 .email{
     font-size: .8rem;
 }
+
+
+
 
 @media (min-width:320px){
     .email{

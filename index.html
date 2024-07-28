@@ -120,7 +120,7 @@
         </section>
         <div id="recent-tag" class="nav-tag"></div>
         <section class="recent-work border-accent-top">
-            <div class="container centered">
+            <div class="container">
                 <h4>Recent Work</h4>
                 <div class="rw-bf">
                     <div class="rw-headers">
@@ -147,12 +147,17 @@
                 <div class="reviews">
                     <h5>What People Are Saying</h5>
                     <ul>
-                        <li><i><span><span id="rev1">"I have worked with this team several times. I am impressed with how they are growing their company with professional dedication.</span><button id="review-m-1">more</button>"</span><span class="signature"> - Maribeth</span></i></li>
-                        <li><i><span><span id="rev2">"Bad Hog Land Clearing is awesome! Robert and Noah are honest, hardworking, communicative, punctual, and professional. They were very careful with weather conditions for burning and the safety of our trees/land.</span><button id="review-m-2">MORE</button>"</span><span class="signature"> - Emily<span></span></i></li>
-                        <li><i><span><span id="rev3">"Absolutely fantastic job! These guys are great. They took time to hear what we wanted and worked diligently to get it done."</span><button id="review-m-3">MORE</button></span><span class="signature"> - Catherine</span></i></li>
-                        <li><i><span><span id="rev4">"Robert and Noah did an excellent job for us by trimming the tops of our oaks in the backyard. Now we can get a great view of the lake!"</span><button id="review-m-4">MORE</button></span><span class="signature"> - Callahan</span></i></li>
-                        <li><i><span><span id="rev5">"It was a pleasure to have Noah and Robert on our property near Drfitwood."</span><button id="review-m-5">MORE</button></span><span class="signature"> - Doug</span></i></li>
+                        <li><i><span><span id="rev1">"I have worked with this team several times. I am impressed with how they are growing their company with professional dedication."</span><button id="review-m-1">more...</button></span><span class="underline"></span><span class="signature"> - Maribeth</span></i></li>
+                        <li><i><span><span id="rev2">"Bad Hog Land Clearing is awesome! Robert and Noah are honest, hardworking, communicative, punctual, and professional. They were very careful with weather conditions for burning and the safety of our trees/land."</span><button id="review-m-2">more...</button></span><span class="underline"></span><span class="signature"> - Emily<span></span></i></li>
+                        <li><i><span><span id="rev3">"Absolutely fantastic job! These guys are great. They took time to hear what we wanted and worked diligently to get it done."</span><button id="review-m-3">more...</button></span><span class="underline"></span><span class="signature"> - Catherine</span></i></li>
+                        <li><i><span><span id="rev4">"Robert and Noah did an excellent job for us by trimming the tops of our oaks in the backyard. Now we can get a great view of the lake!"</span><button id="review-m-4">more...</button></span><span class="underline"></span><span class="signature"> - Callahan</span></i></li>
+                        <li><i><span><span id="rev5">"It was a pleasure to have Noah and Robert on our property near Drfitwood."</span><button id="review-m-5">more...</button></span><span class="underline"></span><span class="signature"> - Doug</span></i></li>
                     </ul>
+                    <btn class="google-reviews">
+                        <a href="https://www.google.com/search?client=firefox-b-1-d&q=bad+hog+land+clearing#lrd=0x83839102a51af583:0xc9b7d1a338b76191,1,,,," target="_blank">
+                        <img src="images/googleReviews.png" loading="lazy" alt="">
+                        </a>
+                    </btn>
                 </div>
                 
             </div>
@@ -261,7 +266,7 @@
                     rev5Status = true
                 }
                 review.textContent = textMore
-                button.textContent = "Less"
+                button.textContent = "less"
 
             } 
             else{
@@ -278,7 +283,7 @@
                     rev5Status = false
                 }
                 review.textContent = textLess
-                button.textContent = "More"
+                button.textContent = "more..."
             }
         }
 
@@ -394,7 +399,7 @@
                 navMenu.style.transform = "translate3d( 0px, .01rem, 0px)"
                 slide = true
             } else {
-                navMenu.style.transform = "translate3d( 0px, -8rem, 0px)"
+                navMenu.style.transform = "translate3d( 0px, -10rem, 0px)"
                 slide = false
             }
 
