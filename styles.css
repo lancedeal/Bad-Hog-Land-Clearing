@@ -664,7 +664,7 @@ footer img{
 
 .pocket-loader{
     visibility: hidden;
-    position: absolute
+    position: absolute;
 }
 
 @media (max-width: 62rem){
