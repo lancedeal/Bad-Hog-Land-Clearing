@@ -663,6 +663,7 @@ footer img{
 }
 
 .pocket-loader{
+    display: flex;
     visibility: hidden;
     position: absolute;
 }
