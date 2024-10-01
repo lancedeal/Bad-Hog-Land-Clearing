@@ -650,6 +650,7 @@ footer img{
     border-top: #cecece solid 2px;
     border-bottom: #cecece solid 2px;
     margin-bottom: 1rem;
+    position: relative;
 }
 
 
@@ -659,6 +660,11 @@ footer img{
     justify-content: center;
     align-items: center;
     width: min(90%, 45%);
+}
+
+.pocket-loader{
+    visibility: hidden;
+    position: absolute
 }
 
 @media (max-width: 62rem){
